@@ -1,0 +1,32 @@
+h1{
+    color: blue;
+}
+
+body{
+    background-color:#99eac2 ;
+}
+
+.descr{
+    font-size: 20pt;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+img{
+    width:50%;
+    height:50%;
+}
+
+li{
+    background-color: red;
+    margin: 10px;
+    padding: 10px;
+    
+}
+
+dt{
+    font-weight: bold;
+}
+
+.container{
+    display: flex;
+}

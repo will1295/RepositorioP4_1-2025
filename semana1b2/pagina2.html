@@ -1,0 +1,65 @@
+<!--Indica al navegador que tipo de documento es-->
+<!DOCTYPE html>
+<!--Indica la apertura del codigo html-->
+<html lang="en">
+<!--Es donde van las etiquetas de configuracion-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #cparrf{
+            color: blue;
+        }
+
+        .classparf{
+            color:green;
+        }
+
+        p{
+            color:red;
+        }
+
+        div p{
+            color:blueviolet;
+        }
+
+        div p#parrafo2{
+            color:#dd92ea;
+        }
+
+    </style>
+
+</head>
+<body>
+    <p id="cparrf">Esto es un texto</p>
+    <!--Etiqueta parrafo-->
+    <p class="classparf">Esto es un parrafo</p>
+    <!--Etiqueta div-->
+    <div>
+        <p>Esto es un parrafo dentro de un div</p>
+        <p id="parrafo2">Este es otro parrafo dentro de un div</p>
+    </div>
+    <p>Esto es un parrafo fuera de un div</p>
+    <!--Etiqueta imagen-->
+    <img src="" alt="">
+    <!--Salto de linea-->
+    <br>
+    <!--Etiqueta de encabezado-->
+    <h1>Esto es un titulo</h1>
+    <h2>Esto es un titulo h2</h2>
+    <h6>Esto es un titulo h6</h6>
+
+    <script>
+        //Variables con var
+        var num1 = 2;
+        //Variables con let
+        let num2 = 4;
+        //Constantes
+        const num3=20;
+        console.log(num1+num2);
+        alert("Hola esto es una alerta");
+
+    </script>
+</body>
+</html>

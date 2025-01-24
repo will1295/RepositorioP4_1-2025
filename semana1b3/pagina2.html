@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /*Selectores combinados*/
+        div p{
+            background-color: red;
+         }
+
+        .contenido #parrafo1{
+            background-color: aqua;
+         }
+
+        div *{
+            background-color: chartreuse;
+         }
+
+        /*Selector por atributo*/
+         button[type="button"]{
+            background-color: aqua;
+         }
+
+    </style>
+
+</head>
+<body>
+    <div>
+        <p>Este parrafo está dentro del div</p>
+    </div>
+
+    <p>Este parrafo está fuera del div</p>
+
+    <div class="contenido">
+        <p>Otro parrafo</p>
+        <p id="parrafo1">Este es el contenido</p>
+    </div>
+
+    <button type="button">Click</button>
+    <button type="submit">Submit</button>
+
+
+
+</body>
+</html>

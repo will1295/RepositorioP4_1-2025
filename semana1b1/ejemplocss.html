@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            background-color: red;
+            font-size: 200%;
+        }
+
+        #elemento2{
+            background-color: blue;
+        }
+        .elemento3{
+            background-color: green;
+        }
+
+        div p{
+            background-color: aquamarine;
+        }
+
+        #div1 #parrafo1{
+            background-color: burlywood;
+        }
+
+        .div2 .parrafo2{
+            background-color: pink;
+        }
+
+        .div3 #parrafo3{
+            background-color: yellow;
+        }
+
+        button[type="button"]{
+            background-color: chocolate;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Selectores en css</h1>
+
+    <h2>Un selector en css puede ser:</h2>
+    <p>1-La etiqueta del elemento</p>
+    <p id="elemento2">2-El id del elemento</p>
+    <p class="elemento3">3-La clase del elemento</p>
+    <h2> Estos son selectores simples</h2>
+    <h2>Pero también, pueden ser una combinación de ellos, por ejemplo:</h2>
+
+    <div>
+        <p>1-Etiqueta con etiqueta</p>
+    </div>
+    <div id="div1">
+        <p id="parrafo1">2-Id con id</p>
+    </div>
+    <div class="div2">
+        <p class="parrafo2">3-Class con class</p>
+    </div>
+    <div class="div3">
+        <p id="parrafo3">4-O una combinación de cualquiera</p>
+    </div>
+    <h2>Estos son selectores combinados</h2>
+
+    <h2>Tenemos también los selectores por el tipo de atributo</h2>
+    <button type="button">Click Aqui</button>
+    <button type="submit">Click aqui</button>
+
+</body>
+</html>

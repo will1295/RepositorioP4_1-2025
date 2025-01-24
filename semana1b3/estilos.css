@@ -1,0 +1,25 @@
+/*Selector simple que apunta a todas las etiquetas P*/
+p{
+    background-color: red;
+}
+
+ /*Selector simple que apunta a todas las etiquetas con class titulo1*/         
+.titulo1{
+        background-color: blue;
+         }
+/*Selector simple que apunta a todas las etiquetas con id parrafo1*/ 
+#parrafo1{
+        background-color: green;
+        } 
+
+
+.divel{
+    border: 1px black solid;
+}
+
+.container{
+    /*display: flex;*/
+    display: grid;
+    row-gap: 20px;
+    /*width: 33%;*/
+}
