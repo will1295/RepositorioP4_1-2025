@@ -1,0 +1,39 @@
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: 1px solid black;
+    /*padding-top: 20%;*/
+}
+
+.container-item{
+    border: 1px solid black;
+    width: 100%;
+    text-align: center;    
+}
+
+.form-container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    border: 1px black solid;
+    max-width: 500px;
+    padding: 20px;
+    background-color: aquamarine;
+    gap: 15px;
+}
+
+.form-groups{
+    display: flex;
+    align-items: center;
+}
+
+.formulario{
+    background-color: aqua;
+    padding: 10px;
+    border: 2px solid black;
+}
+
+.contenedor{
+    justify-content: center;
+}
