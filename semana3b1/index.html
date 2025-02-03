@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var variable1 = 10;
+        var arreglo1 = [1,2,3,4,5,6,7,8];
+        var arreglo2 = Array(5);
+        var arreglo3 = new Array(3);
+
+        var arreglo4 = ["Juan","Maria","Luis","Ana","Luisa"]
+
+        //console.log(arreglo1);
+        //console.log(arreglo2);
+        //console.log(arreglo3);
+
+        console.log(arreglo4[1]);
+        arreglo4[1] = "Carlos"
+        console.log(arreglo4);
+
+        arreglo4[6] = "Pedro";
+        console.log(arreglo4);
+
+        arreglo4.push("Karla");
+        console.log(arreglo4);
+
+        delete(arreglo4[2]);
+        console.log(arreglo4);
+
+        arreglo4.splice(1,3);
+        console.log(arreglo4);
+
+    </script>
+</body>
+</html>
