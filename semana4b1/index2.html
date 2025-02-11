@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" onclick="alerta()">Haz click aquí!</button>
+    <button id="btn" type="button">Haz click aquí también</button>
+    <br>
+
+    <label id="label1" for="">Este texto cambiará con lo que está en el input</label>
+    <input id="input1" type="text">
+    <button id="btn1" type="button">Intenta hacer click</button>
+
+    <br>
+    <label id="label2" for="">Este texto cambiará al escribir en el input</label>
+    <input id="input2" type="text">
+    <br>
+    <input onfocus="alertf()" id="input3" type="text">
+    <br>
+    <input id="num1" type="number">
+    <input id="num2" type="number">
+    <button onclick="sumar()" type="button">Sumar los dos números</button>
+    <label id="labelresul" for=""></label>
+    <script>
+
+        let num1 = document.querySelector("#num1");
+        let num2 = document.querySelector("#num2");
+        let labelresul = document.querySelector("#labelresul");
+        
+        
+        function alerta(){
+            alert("Haz hecho click");
+        }
+
+        function alertf(){
+            //alert("El input tiene el foco");
+            console.log("El input tiene el foco");
+        }
+
+        function sumar(){
+            labelresul.innerHTML =(Number(num1.value))+(Number(num2.value));
+            
+        }
+
+        let boton = document.querySelector("#btn").addEventListener("click",function(){
+            alert("Haz llamado al listener de click");
+        })
+
+        let label1 = document.querySelector("#label1");
+        let input1 = document.querySelector("#input1");
+        let label2 = document.querySelector("#label2");
+        let input2 = document.querySelector("#input2");
+
+
+        let btn1 = document.querySelector("#btn1")
+                        .addEventListener("click",function(){
+                            label1.textContent = input1.value;
+                        })
+
+        document.querySelector("#input2")
+            .addEventListener("input",function(){
+                label2.textContent = input2.value; 
+            })
+
+
+    </script>
+</body>
+</html>

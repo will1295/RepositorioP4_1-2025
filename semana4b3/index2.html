@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--Evento de click-->
+    <button type="button" onclick="alerta()">Haz Click Aquí</button>
+    <button id="btn" type="button">Haz click aqui también!</button>
+    <br>
+    <label id="labelc" for="">Escribe en el input y cambiare mi texto</label>
+    <br>
+    <input id="inputc" type="text">
+    <br>
+    <button id="cambio" type="button">Pruebalo</button>
+    <input onfocus="funcion()" type="text">
+
+    <input id="inputescr" type="text">
+    <label id="labelescr" for="">Este label cambia automaticamente al escribir en el input</label>
+
+    <script>
+        function alerta(){
+            alert("Haz hecho click!")
+        }
+
+        let boton1 = document.querySelector("#btn");
+        let labl = document.querySelector("#labelc");
+        let inp = document.querySelector("#inputc");
+        let inputescr = document.querySelector("#inputescr");
+        let labelescr = document.querySelector("#labelescr");
+        boton1.addEventListener("click",function(){
+            alert("Esto es un event listener");
+        }) 
+
+        let btnc = document.querySelector("#cambio");
+        btnc.addEventListener("click",function(){
+            labl.textContent = inp.value;
+        })
+
+        function funcion(){
+            console.log("El input tiene el foco");
+        }
+
+        inputescr.addEventListener("input",function(){
+            labelescr.textContent = inputescr.value;
+        })
+
+    </script>
+</body>
+</html>
