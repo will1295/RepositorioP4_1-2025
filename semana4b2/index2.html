@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" onclick="alerta()">Haz Click!</button>
+    <button id="btnalerta" type="button">Haz Click Acá</button>
+    <br>
+    <input type="number" name="" id="n1">
+    <input type="number" name="" id="n2">
+    <button id="btnsuma" type="button">Sumar</button>
+    <label id="resultado" for=""></label>
+    <script>
+        function alerta(){
+            alert("Haz hecho click");
+        }
+
+        //let btnalert = document.getElementById("btnalerta");
+        let btnalert = document.querySelector("#btnalerta");
+        btnalert.addEventListener("click",alerta2);
+        
+        function alerta2(){
+            alert("Alerta por medio de un listener");
+        }
+
+        let n1 = document.querySelector("#n1");
+        let n2 = document.querySelector("#n2");
+        let resultado = document.querySelector("#resultado");
+        document.getElementById("btnsuma").addEventListener("click",function(){
+                let num1 = Number(n1.value);
+                let num2 = Number(n2.value);
+                //console.log(num1+num2);
+                resultado.textContent=num1+num2;
+            }
+        )
+
+    </script>
+</body>
+</html>
