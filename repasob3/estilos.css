@@ -1,0 +1,26 @@
+/*.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: 1px solid black;
+}*/
+
+
+.contenido{
+    background-color: aqua;
+    padding: 10px;
+    width: 600px;
+    text-align: center;
+}
+
+.imagen{
+    max-width: 50%;
+    max-height: 50%;
+}
+
+@media(max-width:600px){
+    .contenido{
+        background-color: red;
+        width: 300px;
+    }
+}
