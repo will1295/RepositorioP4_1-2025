@@ -1,0 +1,31 @@
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+img{
+    max-width: 25%;
+    max-height: 25%;
+}
+
+mi-elemento{
+    margin-right: 200px;
+}
+
+
+@media (max-width:600px){
+    body{
+        background-color: aqua;
+        /*font-size: 20%;*/
+    }
+
+    img{
+        max-width: 10%;
+        max-height: 10%;
+    }
+
+    #formulario{
+        background-color: red;
+    }
+}
