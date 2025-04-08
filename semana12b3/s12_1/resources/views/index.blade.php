@@ -33,7 +33,7 @@
                     <td>No</td>
                 @endif
                 <td>
-                    <button>Editar</button>
+                    <a href="{{route('editar',$libro->id)}}"><button>Editar</button></a>
                     <a href="">
                         <form action="/{{$libro->id}}" method="post">
                             @csrf

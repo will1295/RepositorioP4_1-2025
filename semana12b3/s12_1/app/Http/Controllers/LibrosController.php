@@ -49,17 +49,26 @@ class LibrosController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(LibrosModel $librosModel)
+    public function edit($id)
     {
-        //
+        $libro = DB::select("SELECT * FROM tbl_libros WHERE id=?",
+                            [$id])[0];
+        return view("editar",compact("libro"));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, LibrosModel $librosModel)
+    public function update(Request $request, $id)
     {
-        //
+        $titulo = $request->input("intitulo");
+        $autor = $request->input("inautor");
+        $disponible = $request->has("disponible") ? 1 : 0; // Cambiado de "disponibilidad" a "disponible"
+    
+        DB::update("UPDATE tbl_libros SET titulo=?, autor=?, disponibilidad=?
+         WHERE id=?", [$titulo, $autor, $disponible, $id]);
+        
+        return redirect()->route("index");
     }
 
     /**

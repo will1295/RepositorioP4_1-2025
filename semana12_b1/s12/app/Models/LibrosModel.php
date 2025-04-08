@@ -10,7 +10,8 @@ class LibrosModel extends Model
 
     protected $fillable = [
         "titulo",
-        "autor"
+        "autor",
+        "disponibilidad"
     ];
 
     protected $attributes = [
