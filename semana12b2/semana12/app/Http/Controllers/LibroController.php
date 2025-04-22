@@ -27,4 +27,25 @@ class LibroController extends Controller
         return redirect()->route("index");
     }
 
+    public function editar($id){
+        $libro = DB::select("SELECT * FROM librostbl WHERE id=?",[$id])[0];
+        return view("editar",compact("libro"));
+    }
+
+    public function actualizar(Request $request,$id){
+        $titulo = $request->input("intitulo");
+        $autor = $request->input("inautor");
+        $disponible = $request->has("dispon") ? 1:0;
+        DB::update("UPDATE librostbl SET titulo=?,autor=?,dispon=?
+         WHERE id=?",[$titulo,$autor,$disponible,$id]);
+        return redirect()->route("index");
+
+    }
+
+    public function eliminar($id){
+        DB::delete("DELETE FROM librostbl WHERE id=?",[$id]);
+        return redirect()->route("index");
+
+    }
+
 }
