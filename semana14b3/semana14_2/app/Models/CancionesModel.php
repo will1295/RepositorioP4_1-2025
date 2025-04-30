@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class CancionesModel extends Model
 {
+
+    protected $table = 'tblcanciones';
+
     protected $fillable = [
         'titulo',
         'duracion',
@@ -13,7 +16,7 @@ class CancionesModel extends Model
     ];
 
     public function artista(){
-        return $this->belongsTo(ArtistaModel::class);
+        return $this->belongsTo(ArtistaModel::class,'idartista');
     }
 
     public function generos(){

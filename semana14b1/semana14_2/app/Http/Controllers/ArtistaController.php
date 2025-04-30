@@ -29,15 +29,22 @@ class ArtistaController extends Controller
     }
 
     public function editar($id){
+        //Consulta de select con un id especifico
         $artista = ArtistasModel::findOrFail($id);
         return view('editar',compact('artista'));
     }
 
-    public function actualizar(){
-
+    public function actualizar(Request $request,$id){
+        $artista = ArtistasModel::findOrFail($id);
+        $artista->nombre = $request->input('nombre');
+        $artista->nacionalidad = $request->input('nacionalidad');
+        $artista->save();
+        return redirect()->route('index');
     }
 
-    public function eliminar(){
-
+    public function eliminar($id){
+        $artista = ArtistasModel::findOrFail($id);
+        $artista->delete();
+        return redirect()->route('index');
     }
 }

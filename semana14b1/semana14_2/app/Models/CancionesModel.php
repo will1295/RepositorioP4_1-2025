@@ -16,7 +16,7 @@ class CancionesModel extends Model
     ];
 
     public function artistas(){
-        return $this->belongsTo(ArtistasModel::class);
+        return $this->belongsTo(ArtistasModel::class,"idartista");
     }
 
     public function generos(){

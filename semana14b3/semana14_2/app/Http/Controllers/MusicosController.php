@@ -35,18 +35,20 @@ class MusicosController extends Controller
         return view('editar', compact('artista'));
     }
 
-    public function actualizar(Request $request, ArtistaModel $artista){
-        $validacion = Validator::make($request->all(),[
-            'nombre' => 'required|string|max:100',
-            'nacionalidad' => 'required|string|max:100'
-        ]);
-
-        $artista->update($request->all());
+    public function actualizar(Request $request, $id){
+        $artista = ArtistaModel::findOrFail($id);
+        $artista->nombre = $request->input('nombre');
+        $artista->nacionalidad = $request->input('nacionalidad');
+        //Si encuentra un registro lo actualiza pero sino lo crea
+        $artista->save();
         return redirect()->route('index');
 
     }
 
-    public function borrar(){
+    public function borrar($id){
+        $artista = ArtistaModel::findOrFail($id);
+        $artista->delete();
+        return redirect()->route('index');
 
     }
 }

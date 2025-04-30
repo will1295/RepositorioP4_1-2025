@@ -6,20 +6,23 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>Listado de canciones</h1>
+
     <ol>
-        @foreach($musicos as $musico)
-        <li>{{$musico->nombre}} -  {{$musico->nacionalidad}}  
-                <a href="{{route('editar',$musico->id)}}">
-                    <button type="button">Editar</button>
-                </a>
-                <form action="{{route ('borrar',$musico->id)}}" method="post">
+        @foreach($canciones as $cancion)
+        <li>
+            {{$cancion->titulo}} - {{$cancion->duracion}} - {{$cancion->artista->nombre}}
+
+            <a href="{{route('ceditar',$cancion->id)}}"><button type="button">Editar</button></a>
+
+            <form action="{{route ('cborrar',$cancion->id)}}" method="post">
                     @csrf
                     @method('DELETE')
                     <button type="submit">Eliminar</button>
                 </form>
-
         </li>
         @endforeach
     </ol>
+    
 </body>
 </html>

@@ -1,50 +1,59 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\CancionesModel as Canciones;
+use App\Models\ArtistaModel as Artistas;
+use Illuminate\Support\Facades\Validator;
 
 use Illuminate\Http\Request;
-use App\Models\CancionesModel;
-use App\Models\ArtistasModel;
 
 class CancionesController extends Controller
 {
     public function index(){
-        $canciones = CancionesModel::with("artistas")->get();
+        $canciones = Canciones::with('artista')->get();
         return view('canciones.index',compact('canciones'));
-
     }
 
     public function crear(){
-        $artistas = ArtistasModel::all();
+        $artistas = Artistas::all();
         return view('canciones.crear',compact('artistas'));
+
     }
 
     public function guardar(Request $request){
-        CancionesModel::create($request->all());
+        $validacion = Validator::make($request->all(),[
+            "titulo" => "required|string|max:150",
+            "duracion" => "required|integer|min:1",
+            "idartista" => "required"
+        ]);
+
+        Canciones::create($request->all());
         return redirect()->route('cindex');
+
     }
 
     public function editar($id){
-        $cancion = CancionesModel::findOrFail($id);
-        $artistas = ArtistasModel::all();
+        $cancion = Canciones::findOrFail($id);
+        $artistas = Artistas::all();
         return view('canciones.editar',compact('cancion','artistas'));
 
     }
 
-    public function actualizar(Request $request, $id){
-        $cancion = CancionesModel::findOrFail($id);
-        $cancion->nombre = $request->input('nombre');
+    public function actualizar(Request $request,$id){
+        $cancion = Canciones::findOrFail($id);
+        $cancion->titulo = $request->input('titulo');
         $cancion->duracion = $request->input('duracion');
         $cancion->idartista = $request->input('idartista');
         $cancion->save();
         return redirect()->route('cindex');
-
+        
     }
 
     public function borrar($id){
-        $cancion = CancionesModel::findOrFail($id);
+        $cancion = Canciones::findOrFail($id);
         $cancion->delete();
         return redirect()->route('cindex');
-    }
+        
 
+    }
 }

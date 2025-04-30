@@ -18,3 +18,4 @@ class ArtistaModel extends Model
         return $this->hasMany(CancionesModel::class);
     }
 }
+
